@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom'
 
 const AuthForm = () => {
 	const history = useHistory()
+  console.log(history)
 	const authCtx = useContext(authContext)
 	const emailInputRef = useRef()
 	const passwordInputRef = useRef()
@@ -19,6 +20,7 @@ const AuthForm = () => {
 		setIsLogin((prevState) => !prevState)
 	}
 
+  
 	const submitHandler = (event) => {
 		event.preventDefault()
 
@@ -49,7 +51,8 @@ const AuthForm = () => {
 				.then((response) => {
 					setIsLoading(false)
 					if (response.ok) {
-						history.replace('/profile')
+            console.log(history)
+						history.replace('/')
 
 						return response.json()
 					} else {
