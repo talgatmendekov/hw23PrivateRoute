@@ -12,11 +12,14 @@ export const authContext = React.createContext({
 
 export const AuthContextProvider = (props) => {
   const [token, setToken] = useState(null);
-  const [name, setName] = useState('');
+  const [name, setName] = useState();
 
-  const getNameValueHandler = (userName) => {
+
+   const getNameValueHandler = (userName) => {
     setName(userName)
   }
+
+
 
   useEffect(() => {
     const initialToken = localStorage.getItem('@token-onine-store');
